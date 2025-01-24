@@ -7,7 +7,7 @@ const StartPage = () => {
   const onStart = () => {
     navigate('/home');
   }
-  const test = (e) => {
+  const onClickMenu = (e) => {
     const {textContent} = e.target;
     setText(textList[textContent]);
   }
@@ -24,11 +24,11 @@ const StartPage = () => {
         </div>
         <div className='flex-[6] flex gap-x-4'>
           <div className='flex-[3] flex-col text-white relative flex  border-r-[1px] p-4'>
-            <button onClick={test} className='py-2 px-8 hover:bg-blue-600 transition m-4'>Introduce</button>
-            <button onClick={test} className='py-2 px-8 hover:bg-blue-600 transition m-4'>About</button>
+            <button onClick={onClickMenu} className='py-2 px-8 hover:bg-blue-600 transition m-4'>Introduce</button>
+            <button onClick={onClickMenu} className='py-2 px-8 hover:bg-blue-600 transition m-4'>About</button>
           </div>
 
-          <div className='flex-[7] text-white relative p-4'>
+          <div className='flex-[7] text-white relative py-4 px-8'>
             <p>{text}</p>
           </div>
         </div>
