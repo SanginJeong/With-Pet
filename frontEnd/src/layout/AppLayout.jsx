@@ -6,7 +6,11 @@ const AppLayout = () => {
   return (
     <>
       <Navbar/>
-      <Outlet/>
+      <div className='flex justify-center'>
+        <div className='w-[80%]'>
+          <Outlet/>
+        </div>
+      </div>
       <Footer/>
     </>
   )

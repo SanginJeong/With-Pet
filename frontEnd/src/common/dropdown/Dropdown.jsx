@@ -1,44 +1,24 @@
-import React, {useState} from 'react'
+import React from "react";
+import { useDropdownStore } from "../../store/useDropdownStore";
 
-const Dropdown = ({children}) => {
-  const [isOpen, setIsOpen] = useState(false);
-  const handleMouseOver = () => {
-    setIsOpen(true)
-  };
-  const handleMouseLeave = () => setIsOpen(false);
+const Dropdown = ({ children }) => {
+  return <div className="relative flex justify-center gap-16">{children}</div>;
+};
+
+Dropdown.header = ({ children }) => {
+  return (
+    <div className="relative px-4 py-2 font-semibold cursor-pointer hover:text-blue-500 transition">
+      {children}
+    </div>
+  );
+};
+
+Dropdown.item = ({ children }) => {
   return (
     <div>
-      {React.Children.map(children, (child)=>
-        React.cloneElement(child, {isOpen, handleMouseLeave, handleMouseOver})
-      )}
-    </div>
-  )
-}
-
-Dropdown.header = ({children, isOpen, handleMouseLeave, handleMouseOver}) => {
-  return (
-    <ul 
-      onMouseOver={handleMouseOver}
-      onMouseLeave={handleMouseLeave}
-      className='relative'>
-        {React.Children.map(children, (child)=>
-          React.cloneElement(child, {isOpen})
-        )}
-    </ul>
-  )
-}
-
-Dropdown.item = ({children, isOpen}) => {
-  
-  return (
-    <ul 
-      className={
-        ` transition absolute left-[0.8rem] z-10 
-          ${isOpen ? 'opacity-100 visible' : 'opacity-0 invisible'}`}>
       {children}
-    </ul>
-  )
-}
+    </div>
+  );
+};
 
-
-export default Dropdown
+export default Dropdown;

@@ -1,13 +1,19 @@
-import React from 'react'
+import React, { useEffect } from 'react'
+import { contentType } from './contentType'
+import Card from '../../common/card/Card'
+import Tag from '../../common/tag/Tag'
+import SearchForm from './serachForm/SearchForm'
+import { useSearchStore } from '../../store/uesSearchStore'
 
 const HomePage = () => {
+  const setSearchTerm = useSearchStore((state)=>state.setSearchTerm);
+  useEffect(()=>{
+    setSearchTerm("");
+  },[])
   return (
     <>
-      <div className='flex justify-center p-8'>
-        <form className='w-64'>
-          <input placeholder='검색어를 입력하세요' type="text" className='w-full p-2 border-b-[1px] border-black focus:rounded-[12px]' />
-        </form>
-      </div>
+      <SearchForm/>
+      <Tag/>
     </>
   )
 }

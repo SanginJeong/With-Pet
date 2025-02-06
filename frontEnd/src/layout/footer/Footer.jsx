@@ -2,7 +2,7 @@ import React from 'react'
 import {Link} from 'react-router';
 const Footer = () => {
   return (
-    <div className='bg-gray-700 text-white p-4 absolute w-[100%] bottom-[0]'>
+    <div className='bg-gray-700 text-white p-4 w-[100%] bottom-[0]'>
       <div className='flex justify-center gap-4 text-[30px]'>
         <Link to='/' className='text-red-600 hover:text-red-800 transition'><i class="fa-brands fa-youtube"></i></Link>
         <Link to='/' className='text-pink-600 hover:text-pink-800 transition'><i class="fa-brands fa-instagram"></i></Link>

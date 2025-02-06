@@ -2,7 +2,7 @@ import React from 'react'
 import Modal from '../../common/modal/Modal'
 import { useModalStore } from '../../store/useModalStore'
 import { Link } from 'react-router'
-const Login = () => {
+const LoginModal = () => {
   const {closeModal} = useModalStore((state)=>state.login);
   return (
     <>
@@ -31,4 +31,4 @@ const Login = () => {
   )
 }
 
-export default Login
+export default LoginModal

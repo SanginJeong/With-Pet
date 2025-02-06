@@ -1,6 +1,6 @@
 export const dropdownList = [
   {
-    header: "Menu 1", items: ["menu1-1", "menu1-2", "menu1-3", "menu1-4"] 
+    header: "서비스", items: ["서비스 소개", "홈페이지", "관광정보 검색"] 
   },
   {
     header: "Menu 2", items: ["menu2-1", "menu2-2", "menu2-3", "menu2-4"] 
