@@ -6,9 +6,9 @@ import { useSearchStore } from '../../../store/uesSearchStore';
 
 const ServiceDivideModal = () => {
   const {closeModal} = useModalStore();
-  const {cat1, cat2, cat3, setCat1, setCat2, setCat3} = useSearchStore();
+  const {selectedContentType,cat1, cat2, cat3, setCat1, setCat2, setCat3} = useSearchStore();
   // 대분류
-  const {data: categoryCode} = useGetCategoryCodeQuery({cat1:"", cat2: "", cat3:""});
+  const {data: categoryCode} = useGetCategoryCodeQuery({cat1:"", cat2: "", cat3:"", contentTypeId : selectedContentType.id});
 
   const handleCat1 = (item) => {
     setCat1(item);
@@ -44,7 +44,7 @@ const ServiceDivideModal = () => {
                 {categoryCode?.map((item)=>(
                   <div>
                     <button onClick={()=>handleCat1(item)} 
-                      className={`${item.name === cat1.name ? "bg-blue-600 text-white" : ""} my-1 border-2 hover:bg-blue-600 hover:text-white transition p-2 rounded-md w-32`}>
+                      className={`${item.name === cat1.name ? "bg-blue-600 text-white" : ""} my-1 border-2 hover:bg-blue-600 hover:text-white transition p-2 rounded-md w-[100px] sm:w-32`}>
                       {item.name}
                     </button>
                   </div>
@@ -56,7 +56,7 @@ const ServiceDivideModal = () => {
                   <div>
                     <button 
                       onClick={()=>handleCat2(item)}
-                      className={`${item.name === cat2.name ? "bg-blue-600 text-white" : ""} my-1 border-2 hover:bg-blue-600 hover:text-white transition p-2 rounded-md w-32`}>
+                      className={`${item.name === cat2.name ? "bg-blue-600 text-white" : ""} my-1 border-2 hover:bg-blue-600 hover:text-white transition p-2 rounded-md w-[100px] sm:w-32`}>
                       {item.name}
                     </button>
                   </div>
@@ -68,7 +68,7 @@ const ServiceDivideModal = () => {
                     <div>
                       <button 
                         onClick={()=>handleCat3(item)}
-                        className={`${item.name === cat3.name ? "bg-blue-600 text-white" : ""} my-1 border-2 hover:bg-blue-600 hover:text-white transition p-2 rounded-md w-32`}>
+                        className={`${item.name === cat3.name ? "bg-blue-600 text-white" : ""} my-1 border-2 hover:bg-blue-600 hover:text-white transition p-2 rounded-md w-[100px] sm:w-32`}>
                         {item.name}
                       </button>
                     </div>

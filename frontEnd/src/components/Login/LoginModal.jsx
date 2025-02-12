@@ -3,7 +3,7 @@ import Modal from '../../common/modal/Modal'
 import { useModalStore } from '../../store/useModalStore'
 import { Link } from 'react-router'
 const LoginModal = () => {
-  const {closeModal} = useModalStore((state)=>state.login);
+  const closeModal = useModalStore((state)=>state.closeModal);
   return (
     <>
       <Modal>
@@ -16,14 +16,14 @@ const LoginModal = () => {
               <Link 
                 to='/home/signup' 
                 className='flex items-center text-blue-400 gap-2 p-2'
-                onClick={closeModal}>
+                onClick={()=>closeModal("login")}>
                   <p>회원가입 하러 가기</p>
                   <i class="fa-solid fa-arrow-right"></i>
               </Link>
             </div>
             {/* 에러텍스트 */}
             <button type='submit' className='p-1 my-1 text-white bg-blue-400 hover:bg-blue-600'>완료</button>
-            <button type='button' onClick={closeModal} className='p-1 my-1 text-white bg-blue-400 hover:bg-blue-600'>취소</button>
+            <button type='button' onClick={()=>closeModal("login")} className='p-1 my-1 text-white bg-blue-400 hover:bg-blue-600'>취소</button>
           </form>
         </Modal.content>
       </Modal>

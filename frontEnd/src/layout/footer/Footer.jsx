@@ -11,7 +11,7 @@ const Footer = () => {
       </div>
 
 
-      <div className='p-4 flex justify-center items-center gap-24'>
+      <div className='p-4 flex flex-col sm:flex-row justify-center items-center sm:gap-24'>
         <div className='p-4'>
           <p>상호 : 위드펫 WITH:PET</p>
           <p>본사 : 부산광역시 OO구 OO로 123</p>
@@ -22,14 +22,12 @@ const Footer = () => {
 
         <div className='p-4'>
           <p className='text-[24px]'>About</p>
-          <div className='flex flex-col'>
+          <div className=''>
             <p>Developer : JEONG SANG-IN</p>
-            <ul className='py-4'>
-              <h3 className='text-[24px]'>API</h3>
-              <li>Login : KaKao, Google</li>
-              <li>Map : KaKao</li>
-              <li>tour data : 한국관광공사</li>
-            </ul>
+            <h3 className='text-[24px]'>API</h3>
+            <p>Login : KaKao, Google</p>
+            <p>Map : KaKao</p>
+            <p>tour data : 한국관광공사</p>
           </div>
         </div>
       </div>
@@ -38,7 +36,7 @@ const Footer = () => {
         <div className='flex justify-center p-4'>
           <p>Copyright ⓒ 위드펫 All rights reserved.</p>
         </div>
-        <div className='flex justify-center p-4 gap-4'>
+        <div className='flex justify-center p-2 gap-4 sm:p-4'>
           <Link to='/' className='hover:text-black transition'>개인정보처리방침</Link>
           <Link to='/' className='hover:text-black transition'>이용약관</Link>
           <Link to='/' className='hover:text-black transition'>저작권보호정책</Link>

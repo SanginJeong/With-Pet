@@ -6,6 +6,7 @@ import HomePage from './pages/homePage/HomePage'
 import NotFoundPage from './pages/notFoundPage/NotFoundPage'
 import SignUpPage from './pages/signUpPage/SignUpPage'
 import SearchPage from './pages/searchPage/SearchPage'
+import SearchDetailPage from './pages/searchDetailPage/SearchDetailPage'
 function App() {
 
   return (
@@ -16,6 +17,7 @@ function App() {
           <Route index element={<HomePage/>}/>
           <Route path='signup' element={<SignUpPage/>}/>
           <Route path='search' element={<SearchPage/>}/>
+          <Route path='search/:contentTypeId/:contentId' element={<SearchDetailPage/>}/>
         </Route>
         <Route path='*' element={<NotFoundPage/>}/>
       </Routes>

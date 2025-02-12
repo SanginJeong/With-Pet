@@ -12,14 +12,14 @@ const ContentTypeModal = () => {
       <Modal.content>
         <div className='flex flex-col items-center m-4 gap-4 h-[20rem] overflow-y-scroll'>
           <button 
-            onClick={()=>{setSelectedContentType('전체')}}
-            className={`${selectedContentType === '전체' ? 'bg-blue-600 text-white' : ""} border-2 hover:bg-blue-600 hover:text-white transition p-2 rounded-md w-32`}>
+            onClick={()=>{setSelectedContentType({id: "", name: '전체'})}}
+            className={`${selectedContentType.name === '전체' ? 'bg-blue-600 text-white' : ""} border-2 hover:bg-blue-600 hover:text-white transition p-2 rounded-md w-32`}>
               전체
           </button>
           {contentType.map((content)=>(
             <button 
-              onClick={()=>{setSelectedContentType(content.type)}}
-              className={`${content.type === selectedContentType ? 'bg-blue-600 text-white' : ""} border-2 hover:bg-blue-600 hover:text-white transition p-2 rounded-md w-32`}>
+              onClick={()=>{setSelectedContentType({id: content.id, name: content.type})}}
+              className={`${content.type === selectedContentType.name ? 'bg-blue-600 text-white' : ""} border-2 hover:bg-blue-600 hover:text-white transition p-2 rounded-md w-32`}>
               {content.type}
             </button>
           ))}

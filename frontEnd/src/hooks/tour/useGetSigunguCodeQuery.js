@@ -2,7 +2,7 @@ import {useQuery} from '@tanstack/react-query';
 import tourApi from '../../utills/tourApi';
 
 const getSiGunGu = async (areaCode) => {
-  return await tourApi.get('/sigunguCode', {
+  return await tourApi.get('/areaCode', {
     params : {
       areaCode : areaCode,
     }

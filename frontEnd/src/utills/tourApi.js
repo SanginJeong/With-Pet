@@ -13,6 +13,7 @@ const tourApi = axios.create({
     MobileOS: 'AND',
     MobileApp: 'WITH:PET',
     _type: 'json',
+    numOfRows : 50,
   },
 });
 
